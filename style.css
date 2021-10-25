@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+.heart{
+    font-size: 35px;
+    font-weight: bolder;
+    text-align: center;
+
+}
+
+/* Main Button */
+.main-btn{
+    position: absolute;
+    bottom: 3rem;
+    width: 13rem;
+    height: 13rem;
+    background-color: #3174f0;
+    border-radius: 50%;
+    border: 0.2rem dotted #ffffff;
+    border-width: 0.4rem;
+    padding: 0.1rem;
+    overflow: hidden;
+}
+
+
+.main-btn-content {
+    width: 100%;
+    height: 100%;
+    border: 0.2rem dotted #091475;
+    border-width: 0.3rem;
+    border-radius: 50%;
+    transform: rotate(40deg);
+    transition: transform 0.2s, border 0.2s;
+}
+
+.main-btn:hover .main-btn-content {
+    transform: rotate(60deg);
+    border: 0.2rem dotted #e714ee;
+    border-width: 0.5rem;
+    transition: transform 0.2s 0.5s, border 0.2s;
+}
+
+.main-btn-line{
+    position: absolute;
+    top: 4rem;
+    width: 3rem;
+    height: 0.5rem;
+    border: 0.1rem solid #ffffff;
+}
+
+.main-btn-line:nth-child(1) {
+    transform: rotateZ(-45deg) translateX(-0.65rem);
+    transform-origin: left center;
+    border-right: none;
+}
+
+.main-btn-line:nth-child(2) {
+    transform: rotateZ(45deg) translateX(0.65rem);
+    transform-origin: right center;
+    border-left: none;
+}
+
+.main-btn-line:nth-child(3) {
+    transform: rotateZ(90deg) translateX(0.5rem);
+    border-left: none;
+}
+
+.main-btn span{
+    position: absolute;
+    bottom: 3rem;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.ripple {
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: #00eaff;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    animation: rippleAnim 0.5s forwards;
+}
+
+@keyframes rippleAnim {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    100% {
+        width: 210%;
+        height: 210%;
+    }
+}
+/* End of Main Button */
+/* Common styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    outline: none;
+    font-family: 'JetBrains', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* End of Common Styles */
+
+/* Mouse Circle */
+.mouse-circle,.mouse-dot {
+    border-radius: 50%;
+    position: fixed;
+    z-index: 300;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.mouse-circle {
+
+    width: 6rem;
+    height: 6rem;
+    border: .1rem solid #3cc2f7;
+    border-width: 0.5rem;
+    animation: mouseCircleAnim 10s infinite linear;
+}
+
+@keyframes mouseCircleAnim {
+    0%{
+        width: 6rem;
+        height: 6rem;
+    }
+    25%{
+        width: 8rem;
+        height: 8rem;
+    }
+    35%{
+        width: 4rem;
+        height: 4rem;
+    }
+    70%{
+        width: 8rem;
+        height: 8rem;
+    }
+    100%{
+        width: 6rem;
+        height: 6rem;
+    }
+}
+
+.mouse-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #ffffff;
+    animation: mouseDotAnim 10s infinite linear;
+}
+
+@keyframes mouseDotAnim {
+    0%{
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+    55%{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    100%{
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+}
+
+/* End of Mouse Circle */
+
+
+/* Page BG */
+.page-bg{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(23, 6, 99, 0.7),rgba(13, 12, 29, 0.7)),url(images/scrapperfrontendbg.jpeg) center no-repeat;
+    background-size: cover;
+}
+/* End of Page BG */
+
+/* Section 1 */
+.section-1 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+/* Logo */
+.logo {
+    position: absolute;
+    top: 2rem;
+    left: 5rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+/* End of Logo */
+
+/* Animated Circles */
+.circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+.circle {
+ width: 22rem;
+ height: 22rem;
+ border-radius: 50%;
+ background-color: #3cc2f7;
+ align-self: center;
+ justify-self: center;
+ opacity: 0.8;
+ position: relative;
+ 
+ margin: 10px;
+ transition: left 2s, top 2s;
+}
+.circle-1{
+    background: url(images/landing/instabot.gif) center no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+    border: .9rem dotted #6ed6ff;
+    margin-left: 12rem;
+
+}
+
+.circle-2{
+    background: url(images/landing/AirBnb.gif) center no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+    border: 0.7rem dashed #5fff02;
+    margin-right: 11rem;
+    margin-left: 11rem;
+    display: block;
+}
+.circle-3{
+    background: url(images/landing/CraigslistGIF.gif) center no-repeat;
+    background-color: #3cc2f7;
+    background-size: cover;
+    background-clip: content-box;
+    border: 1rem double #fffb12;
+    margin-right: 11rem;
+    display: block;
+}
+.circle-4{
+    background: url(images/landing/reddit.gif) center no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+    border: 1rem double #cc115f;
+    margin-left: 12rem;
+    margin-bottom: 17rem;
+    display: block;
+}
+.circle-5{
+    background: url(images/landing/pizza.gif) center no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+    border: 1rem dashed #ff0cf3;
+    margin-right: 11rem;
+    margin-left: 11rem;
+    margin-bottom: 17rem;
+    display: block;
+}
+.circle-6{
+    background: url(images/landing/cricinfo.jpeg) center no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+    border: 1rem dotted #438bff;
+    margin-right: 11rem;
+    margin-bottom: 17rem;
+    display: block;
+}
+/* .main-circle {
+    width: 37rem;
+    height: 37rem;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+    background-clip: content-box;
+    border: 1.5rem double #00eaff;
+    transition: width 0.2s, height 0.2s;
+} 
+.main-circle:hover{
+    width:50rem;
+    height: 50rem;
+}
+.main-circle img{
+    mix-blend-mode: lighten;
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: left 2s, top 2s;
+} */
+/* End of Animated Circles */
+
+/* Featured Text */
+.featured-text {
+    font-size:  2.2rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: #00eaff;
+    width: 0;
+    word-wrap: break-word;
+    line-height: 3.3;
+    position: sticky;
+    top: 0;
+}
+.featured-text-1 {
+    margin: 0 auto 0 10rem;
+}
+.featured-text-2 {
+    margin: 0 10rem 0 auto;
+}
+/* End of Featured Text */
+
+
+/* End of Section 1 */
